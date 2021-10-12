@@ -26,12 +26,33 @@
        <div class="section">
             <h1><span>Contacto</span></h1>
 
-            <form>
-                <input name="nombre" placeholder="Nombre" type="text" required /><br/>
-                <input name="email" placeholder="Email" type="email" required /><br/>
-                <textarea name="mensaje" placeholder="Mensaje" required ></textarea>
-                <input type="submit" value="ENVIAR" class="submit" />
+            <form action="" name="formulario" method="get">
+                <input name="nombre" id="nombre" placeholder="Nombre" type="text"  /><br/>
+                <input name="email"  id="email" placeholder="Email" type="email" /><br/>
+                <label for="mensaje"><p>Deja tu mensaje :D </p> </label>
+                <textarea name="mensaje" id="mensaje" placeholder="Mensaje"  ></textarea>
+                <input type="submit" id="btn" value="ENVIAR" class="submit" />
             </form>
+            <script>
+                (function validacion() {
+                    var formulario = document.getElementsByName('formulario')[0],
+                    elementos = formulario.elements,
+                    boton = document.getElementById('btn');
+                
+                var validarNombre = validacion(e){
+                    if (formulario.nombre.value == 0) {-
+                        alert("Completa el campo nombre");
+                        e.preventDefault(e);
+                    }
+                }
+
+                var validar = validacion(e){
+                    validarNombre(e);
+                    
+                };
+                formulario.addEventListener("submit", validar);
+            }())
+            </script>
 
         </div>
 
